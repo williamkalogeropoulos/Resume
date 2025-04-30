@@ -790,42 +790,66 @@ body.dark .hobbies-list li:hover .hobby-icon svg, body.dark .hobbies-list li:foc
   position: relative;
 }
 .certificate-preview {
+  display: none !important;
+}
+.certificate-modal {
   display: none;
-  position: absolute;
-  left: 50%;
-  top: -10px;
-  transform: translate(-50%, -100%);
-  z-index: 20;
-  background: #fff;
-  padding: 0.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(74,144,226,0.18), 0 1.5px 6px rgba(0,0,0,0.08);
-  min-width: 220px;
-  max-width: 340px;
-  max-height: 220px;
-  overflow: hidden;
-  border: 1.5px solid #e0e7ef;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30,40,60,0.85);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
 }
-.certificate-hover:hover .certificate-preview,
-.certificate-hover:focus-within .certificate-preview {
-  display: block;
+.certificate-modal.active {
+  display: flex;
+  animation: modalFadeIn 0.3s;
 }
-.certificate-preview img {
-  width: 100%;
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.certificate-modal .modal-img {
+  max-width: 98vw;
+  max-height: 92vh;
+  width: auto;
   height: auto;
-  border-radius: 8px;
-  display: block;
+  object-fit: contain;
 }
-body.dark .certificate-preview {
+.modal-close {
+  position: absolute;
+  top: 2.5rem;
+  right: 3.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  outline: none;
+  transition: color 0.2s;
+}
+.modal-close:hover, .modal-close:focus {
+  color: #4a90e2;
+}
+body.dark .certificate-modal {
+  background: rgba(10,16,24,0.95);
+}
+body.dark .modal-img {
   background: #23272b;
-  border: 1.5px solid #2c3440;
 }
 @media (max-width: 700px) {
-  .certificate-preview {
-    min-width: 120px;
-    max-width: 90vw;
-    max-height: 120px;
-    left: 0;
-    transform: translateY(-100%);
+  .modal-img {
+    max-width: 98vw;
+    max-height: 60vh;
+  }
+  .modal-close {
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 2rem;
   }
 } 

@@ -12,6 +12,37 @@ window.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark');
   }
+
+  // Certificate modal logic
+  const certThumb = document.querySelector('.certificate-thumb');
+  const certModal = document.getElementById('certificate-modal');
+  const certModalClose = document.querySelector('.modal-close');
+
+  function openCertModal() {
+    certModal.classList.add('active');
+    certModal.querySelector('.modal-img').focus();
+  }
+  function closeCertModal() {
+    certModal.classList.remove('active');
+  }
+  if (certThumb && certModal) {
+    certThumb.addEventListener('click', openCertModal);
+    certThumb.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') openCertModal();
+    });
+  }
+  if (certModalClose) {
+    certModalClose.addEventListener('click', closeCertModal);
+    certModalClose.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') closeCertModal();
+    });
+  }
+  certModal.addEventListener('click', e => {
+    if (e.target === certModal) closeCertModal();
+  });
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeCertModal();
+  });
 });
 
 // Smooth scrolling for navigation with sticky header offset
