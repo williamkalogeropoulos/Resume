@@ -783,4 +783,49 @@ body.dark .hobby-icon svg {
 }
 body.dark .hobbies-list li:hover .hobby-icon svg, body.dark .hobbies-list li:focus .hobby-icon svg {
   stroke: #23272b;
+}
+
+/* Certificate hover effect for education */
+.certificate-hover {
+  position: relative;
+}
+.certificate-preview {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translate(-50%, -100%);
+  z-index: 20;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(74,144,226,0.18), 0 1.5px 6px rgba(0,0,0,0.08);
+  min-width: 220px;
+  max-width: 340px;
+  max-height: 220px;
+  overflow: hidden;
+  border: 1.5px solid #e0e7ef;
+}
+.certificate-hover:hover .certificate-preview,
+.certificate-hover:focus-within .certificate-preview {
+  display: block;
+}
+.certificate-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+body.dark .certificate-preview {
+  background: #23272b;
+  border: 1.5px solid #2c3440;
+}
+@media (max-width: 700px) {
+  .certificate-preview {
+    min-width: 120px;
+    max-width: 90vw;
+    max-height: 120px;
+    left: 0;
+    transform: translateY(-100%);
+  }
 } 
