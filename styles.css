@@ -788,6 +788,48 @@ body.dark .hobbies-list li:hover .hobby-icon svg, body.dark .hobbies-list li:foc
 /* Certificate hover effect for education */
 .certificate-hover {
   position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.2s, border 0.2s;
+  border: 2px solid transparent;
+}
+.certificate-hover:hover, .certificate-hover:focus {
+  box-shadow: 0 0 0 4px #eaf3fa, 0 2px 16px 0 rgba(74,144,226,0.09);
+  border: 2px solid #4a90e2;
+  background: #f7f9fa;
+}
+.certificate-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4rem 1.1rem;
+  background: linear-gradient(90deg, #4a90e2 60%, #6cb6ff 100%);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  outline: none;
+  letter-spacing: 0.02em;
+}
+.certificate-hover:hover .certificate-badge, .certificate-hover:focus .certificate-badge {
+  background: linear-gradient(90deg, #357ab8 60%, #4a90e2 100%);
+  color: #fff;
+}
+body.dark .certificate-hover:hover, body.dark .certificate-hover:focus {
+  background: #23272b;
+  box-shadow: 0 0 0 4px #23272b, 0 2px 16px 0 rgba(108,182,255,0.09);
+  border: 2px solid #6cb6ff;
+}
+body.dark .certificate-badge {
+  background: linear-gradient(90deg, #6cb6ff 60%, #4a90e2 100%);
+  color: #23272b;
+}
+body.dark .certificate-hover:hover .certificate-badge, body.dark .certificate-hover:focus .certificate-badge {
+  background: linear-gradient(90deg, #4a90e2 60%, #6cb6ff 100%);
+  color: #fff;
 }
 .certificate-preview {
   display: none !important;

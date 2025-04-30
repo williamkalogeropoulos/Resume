@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Certificate modal logic
-  const certThumb = document.querySelector('.certificate-thumb');
+  const certCard = document.querySelector('.certificate-hover');
   const certModal = document.getElementById('certificate-modal');
   const certModalClose = document.querySelector('.modal-close');
 
@@ -25,9 +25,9 @@ window.addEventListener('DOMContentLoaded', () => {
   function closeCertModal() {
     certModal.classList.remove('active');
   }
-  if (certThumb && certModal) {
-    certThumb.addEventListener('click', openCertModal);
-    certThumb.addEventListener('keydown', e => {
+  if (certCard && certModal) {
+    certCard.addEventListener('click', openCertModal);
+    certCard.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') openCertModal();
     });
   }
