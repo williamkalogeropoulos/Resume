@@ -34,11 +34,37 @@ navLinks.forEach(link => {
   });
 });
 
-// Placeholder for PDF download
-const downloadBtn = document.getElementById('download-pdf');
-downloadBtn.addEventListener('click', () => {
-  alert('PDF download feature coming soon!');
-});
+// Download PDF functionality using html2pdf.js
+// Dynamically load html2pdf.js if not present
+if (!window.html2pdf) {
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+  script.onload = setupDownloadPDF;
+  document.body.appendChild(script);
+} else {
+  setupDownloadPDF();
+}
+
+function setupDownloadPDF() {
+  const downloadBtn = document.getElementById('download-pdf');
+  if (!downloadBtn) return;
+  downloadBtn.addEventListener('click', () => {
+    console.log('Download PDF button clicked');
+    if (!window.html2pdf) {
+      alert('PDF generation library failed to load. Please check your internet connection and try again.');
+      return;
+    }
+    const mainContent = document.querySelector('main');
+    const opt = {
+      margin:       0.2,
+      filename:     'William_Kalogeropoulos_Resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(mainContent).save();
+  });
+}
 
 // Animate skill bars on scroll
 function animateSkillBars() {

@@ -696,11 +696,15 @@ body.dark .animated-divider path {
   height: 100%;
   background: linear-gradient(90deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.01) 100%);
   filter: blur(2px);
-  animation: dividerHighlight 3.5s linear infinite;
+  animation: dividerWave 3.5s linear infinite;
 }
-@keyframes dividerHighlight {
-  0% { left: -30%; }
-  100% { left: 100%; }
+@keyframes dividerWave {
+  0% { left: -30%; top: 0; }
+  20% { left: 0%; top: 3px; }
+  40% { left: 30%; top: -3px; }
+  60% { left: 60%; top: 3px; }
+  80% { left: 100%; top: -3px; }
+  100% { left: 130%; top: 0; }
 }
 body.dark .divider-3d {
   background: linear-gradient(180deg, #23272b 60%, #181c20 100%);
@@ -708,4 +712,75 @@ body.dark .divider-3d {
 }
 body.dark .divider-3d:after {
   background: linear-gradient(90deg, rgba(108,182,255,0.18) 0%, rgba(108,182,255,0.01) 100%);
+}
+
+/* Hobbies section styles */
+.hobbies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hobbies-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  color: #222;
+  background: rgba(74,144,226,0.04);
+  border-radius: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  transition: background 0.2s, color 0.2s;
+}
+.hobbies-list li:hover, .hobbies-list li:focus {
+  background: #eaf3fa;
+  color: #4a90e2;
+}
+.hobby-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f7f9fa;
+  box-shadow: 0 1px 4px rgba(74,144,226,0.08);
+  transition: background 0.2s;
+}
+.hobbies-list li:hover .hobby-icon, .hobbies-list li:focus .hobby-icon {
+  background: #4a90e2;
+}
+.hobby-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  stroke: #4a90e2;
+  transition: stroke 0.2s;
+}
+.hobbies-list li:hover .hobby-icon svg, .hobbies-list li:focus .hobby-icon svg {
+  stroke: #fff;
+}
+body.dark .hobbies-list li {
+  color: #eaf3fa;
+  background: rgba(108,182,255,0.04);
+}
+body.dark .hobbies-list li:hover, body.dark .hobbies-list li:focus {
+  background: #23272b;
+  color: #6cb6ff;
+}
+body.dark .hobby-icon {
+  background: #23272b;
+}
+body.dark .hobbies-list li:hover .hobby-icon, body.dark .hobbies-list li:focus .hobby-icon {
+  background: #6cb6ff;
+}
+body.dark .hobby-icon svg {
+  stroke: #6cb6ff;
+}
+body.dark .hobbies-list li:hover .hobby-icon svg, body.dark .hobbies-list li:focus .hobby-icon svg {
+  stroke: #23272b;
 } 

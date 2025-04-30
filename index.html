@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -37,7 +38,6 @@
           <li><a href="#education">Education</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#additional">Additional Info</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
           <span class="theme-icon" aria-hidden="true">🌙</span>
@@ -50,7 +50,9 @@
     <section id="about" class="section fade-in-section">
       <h3>About</h3>
       <p>
-        Versatile Full Stack Developer with expertise in Frontend, Backend, and databases, proficient in Java, Python, C#, JavaScript, Angular, and database management. Strong background in business consulting, project management, and franchise operations, blending technical proficiency with strategic thinking. Passionate about delivering scalable solutions and optimizing performance through innovative development and efficient system design.
+        Versatile Full Stack Developer with expertise in Frontend, Backend, and databases, proficient in Java, Python, C#, JavaScript, Angular, and database management.</p>
+        <p>Strong background in business consulting, project management, and franchise operations, blending technical proficiency with strategic thinking. </p>
+        <p>Passionate about delivering scalable solutions and optimizing performance through innovative development and efficient system design.</p>
       </p>
     </section>
     <div class="divider-3d"></div>
@@ -58,12 +60,12 @@
       <h3>Skills & Expertise</h3>
       <div class="skills-list">
         <div class="skill"><span>Java</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
-        <div class="skill"><span>C#</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+        <div class="skill"><span>C#</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
         <div class="skill"><span>Python</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
-        <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+        <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
         <div class="skill"><span>Angular</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
-        <div class="skill"><span>MySQL</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
-        <div class="skill"><span>Web Design</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+        <div class="skill"><span>MySQL</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+        <div class="skill"><span>Web Design</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
         <div class="skill"><span>Full Stack Web Development</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
       </div>
     </section>
@@ -73,33 +75,65 @@
       <div class="timeline">
         <div class="exp-card">
           <h4>Franchisee Business Consultant & New Store Operations and Training Liaison</h4>
-          <span class="company">Daoufood Greece (Domino's Pizza)</span>
-          <span class="period">October 2014 – Present</span>
+          <span class="company">Daufood Greece (Domino's Pizza), Athens</span>
+          <span class="period">October 2020 – Present</span>
           <ul>
-            <li>Accountable for franchisee relationships, sales, operations excellence, growth and training, as well as contractual compliance.</li>
-            <li>Operational visits in Franchise stores.</li>
-            <li>Training new personnel and facilitating new store openings in Greece.</li>
+            <li>Responsible for franchisee relationships, sales, operational excellence, growth, training, and contractual compliance.</li>
+            <li>Opened stores in 10 different locations across Greece, as well as in the Czech Republic and Cyprus.</li>
+            <li>Conduct operational visits to all franchise stores.</li>
             <li>Provide franchisees with coaching, training, education, and development tools.</li>
+            <li>Enforce franchise contract compliance.</li>
+            <li>Facilitate effective business and marketing meetings.</li>
+            <li>Serve as the liaison between Head Office and franchisees.</li>
           </ul>
         </div>
         <div class="exp-card">
-          <h4>Consultant – Executive Search & Selection</h4>
-          <span class="company">ICAP Group</span>
+          <h4>Franchisee Business Consultant & Corporate Supervisor</h4>
+          <span class="company">Daufood Greece (Domino's Pizza), Athens</span>
+          <span class="period">October 2014 – October 2020</span>
+          <ul>
+            <li>Managed franchisee relationships, sales, operational excellence, growth, training, and contractual compliance.</li>
+            <li>Conducted operational visits to all franchise stores.</li>
+            <li>Provided franchisees with coaching, training, education, and development tools.</li>
+            <li>Enforced franchise contract compliance.</li>
+            <li>Facilitated business and marketing meetings.</li>
+            <li>Acted as the liaison between Head Office and franchisees.</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <h4>Consultant, Executive Search & Selection</h4>
+          <span class="company">ICAP Group, Athens</span>
           <span class="period">September 2014 – October 2014</span>
           <ul>
-            <li>Searching and matching CVs to job orders through the ICAP database.</li>
-            <li>Selection of personnel for high-value positions, based on profiling.</li>
-            <li>Completing candidate assessments.</li>
+            <li>Searched and matched CVs to job orders using the ICAP database.</li>
+            <li>Screened CVs and entered candidate data into the company database.</li>
+            <li>Updated candidate records after phone interviews.</li>
+            <li>Performed reference checks by contacting previous employers.</li>
+            <li>Completed candidate assessments.</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <h4>Operations Assistant</h4>
+          <span class="company">Clobber (D. Kalogeropoulos and Co), Athens</span>
+          <span class="period">February 2013 – February 2014</span>
+          <ul>
+            <li>Managed billing, stock inventory, and order follow-ups.</li>
+            <li>Assisted in constructing the company website and designing marketing materials.</li>
+            <li>Maintained a filing system for expenses, reports, and support documentation.</li>
+            <li>Provided administrative support, including document preparation and data entry.</li>
           </ul>
         </div>
         <div class="exp-card">
           <h4>Trainee Consultant</h4>
-          <span class="company">Randstad Hellas</span>
+          <span class="company">Randstad Hellas, Athens</span>
           <span class="period">June 2012 – August 2012</span>
           <ul>
-            <li>Searching and matching CVs to job orders through the Randstad database.</li>
-            <li>Selection of personnel for high-value positions, based on profiling.</li>
-            <li>Supporting other processes, such as data entry, research, and evaluation of appropriate CVs for a job order, as well as telephone service.</li>
+            <li>Entered and updated candidate data in the company database.</li>
+            <li>Searched and matched CVs to job orders using the Randstad database.</li>
+            <li>Screened CVs, conducted phone interviews, and scheduled meetings.</li>
+            <li>Performed reference checks by contacting previous employers.</li>
+            <li>Completed candidate assessments.</li>
+            <li>Supported additional processes such as data entry, research, CV evaluation, and telephone service.</li>
           </ul>
         </div>
       </div>
@@ -130,29 +164,19 @@
       <h3>Projects</h3>
       <div class="projects-list">
         <div class="project-card">
-          <h4>GitPro6</h4>
-          <p>This is my first Git Repo!</p>
-          <a href="https://github.com/williamkalogeropoulos/GitPro6" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h4>javascript</h4>
-          <p>Javascript exercises for Coding Factory 6</p>
-          <a href="https://github.com/williamkalogeropoulos/javascript" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h4>java-oo-projects</h4>
-          <p>Repository for Object Oriented projects</p>
-          <a href="https://github.com/williamkalogeropoulos/java-oo-projects" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h4>springboot-thymeleaf-mysql-boilerplate</h4>
-          <p>SpringBoot boilerplate with maven, thymeleaf, spring-security, and MySQL</p>
-          <a href="https://github.com/williamkalogeropoulos/springboot-thymeleaf-mysql-boilerplate" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
           <h4>CF6-LendingLibrary</h4>
-          <p>A lending Library for Books</p>
+          <p>A lending library application for managing books, built for Coding Factory 6.</p>
           <a href="https://github.com/williamkalogeropoulos/CF6-LendingLibrary" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h4>Resume</h4>
+          <p>This interactive resume website, built with modern web technologies and animations.</p>
+          <a href="https://github.com/williamkalogeropoulos/resume" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h4>To Do</h4>
+          <p>A simple and effective to-do list application for task management.</p>
+          <a href="https://github.com/williamkalogeropoulos/todo" target="_blank">View on GitHub</a>
         </div>
       </div>
     </section>
@@ -164,15 +188,37 @@
         <li>Other Knowledge: ECDL Core, SPSS & SAP (Basic knowledge)</li>
       </ul>
     </section>
-    <div class="divider-3d"></div>
-    <section id="contact" class="section">
-      <h3>Contact</h3>
+    <section id="hobbies" class="section fade-in-section">
+      <h3>Hobbies</h3>
+      <ul class="hobbies-list">
+        <li>
+          <span class="hobby-icon"> 
+            <!-- 3D Printing SVG Icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 7V3h10v4"/><path d="M12 17v4"/><circle cx="12" cy="21" r="1"/></svg>
+          </span>
+          3D Printing
+        </li>
+        <li>
+          <span class="hobby-icon">
+            <!-- Photography SVG Icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </span>
+          Photography
+        </li>
+        <li>
+          <span class="hobby-icon">
+            <!-- Video Editing SVG Icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4a90e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polygon points="10 9 15 12 10 15 10 9"/><rect x="16" y="8" width="2" height="8" rx="1"/></svg>
+          </span>
+          Video Editing
+        </li>
+      </ul>
     </section>
+    <div class="divider-3d"></div>
   </main>
   <footer>
     <div class="container">
       <p>&copy; 2025 William Kalogeropoulos</p>
-      <button id="download-pdf">Download PDF</button>
     </div>
   </footer>
 </body>
