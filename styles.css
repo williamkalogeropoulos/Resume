@@ -894,4 +894,59 @@ body.dark .modal-img {
     right: 1.2rem;
     font-size: 2rem;
   }
+}
+
+/* Additional Information section */
+.info-flex {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.info-block {
+  flex: 1 1 260px;
+  min-width: 220px;
+  background: rgba(74,144,226,0.04);
+  border-radius: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 1px 6px rgba(74,144,226,0.03);
+  margin-bottom: 1rem;
+}
+
+.info-block h4 {
+  margin-top: 0;
+  color: #4a90e2;
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+}
+
+.info-block ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.info-block ul.hobbies-list {
+  padding-left: 0;
+}
+
+.info-block li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+body.dark .info-block {
+  background: #23272b;
+  box-shadow: 0 1px 6px rgba(108,182,255,0.03);
+}
+
+body.dark .info-block h4 {
+  color: #6cb6ff;
+}
+
+@media (max-width: 700px) {
+  .info-flex {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
 } 
