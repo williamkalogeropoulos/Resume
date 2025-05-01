@@ -912,6 +912,14 @@ body.dark .modal-img {
   padding: 1.2rem 1.5rem;
   box-shadow: 0 1px 6px rgba(74,144,226,0.03);
   margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(74,144,226,0.08);
+}
+
+.info-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(74,144,226,0.08);
+  border-color: rgba(74,144,226,0.15);
 }
 
 .info-block h4 {
@@ -919,6 +927,19 @@ body.dark .modal-img {
   color: #4a90e2;
   font-size: 1.15rem;
   margin-bottom: 0.7rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.info-block h4:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: #4a90e2;
+  border-radius: 1px;
 }
 
 .info-block ul {
@@ -933,14 +954,66 @@ body.dark .modal-img {
 .info-block li {
   margin-bottom: 0.5rem;
   font-size: 1.05rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.info-block li:before {
+  content: '•';
+  color: #4a90e2;
+  position: absolute;
+  left: -1.2rem;
+}
+
+.info-block li:hover {
+  color: #4a90e2;
+}
+
+/* Language proficiency styling */
+.info-block ul li:nth-child(1) { font-weight: 500; }
+.info-block ul li:nth-child(2) { font-weight: 500; }
+.info-block ul li:nth-child(3) { opacity: 0.85; }
+
+/* Technical skills description styling */
+.info-block ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-block ul li span:first-child {
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.info-block ul li span:last-child {
+  font-size: 0.95rem;
+  opacity: 0.85;
 }
 
 body.dark .info-block {
   background: #23272b;
   box-shadow: 0 1px 6px rgba(108,182,255,0.03);
+  border-color: rgba(108,182,255,0.08);
+}
+
+body.dark .info-block:hover {
+  box-shadow: 0 4px 12px rgba(108,182,255,0.08);
+  border-color: rgba(108,182,255,0.15);
 }
 
 body.dark .info-block h4 {
+  color: #6cb6ff;
+}
+
+body.dark .info-block h4:after {
+  background: #6cb6ff;
+}
+
+body.dark .info-block li:before {
+  color: #6cb6ff;
+}
+
+body.dark .info-block li:hover {
   color: #6cb6ff;
 }
 
@@ -948,5 +1021,9 @@ body.dark .info-block h4 {
   .info-flex {
     flex-direction: column;
     gap: 1.2rem;
+  }
+  
+  .info-block {
+    transform: none !important;
   }
 } 
