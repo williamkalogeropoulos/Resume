@@ -174,20 +174,56 @@ footer {
 }
 
 /* Skills Bar */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.skills-category {
+  background: rgba(74,144,226,0.04);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 6px rgba(74,144,226,0.03);
+  border: 1px solid rgba(74,144,226,0.08);
+}
+
+.skills-category h4 {
+  color: #4a90e2;
+  margin: 0 0 1.2rem 0;
+  font-size: 1.2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.skills-category h4:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: #4a90e2;
+  border-radius: 1px;
+}
+
 .skills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+
 .skill {
   flex: 1 1 250px;
   margin-bottom: 1rem;
 }
+
 .skill span {
   display: block;
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
+
 .bar {
   background: #e0e7ef;
   border-radius: 6px;
@@ -195,17 +231,72 @@ footer {
   width: 100%;
   overflow: hidden;
 }
+
 .bar .fill {
   background: #4a90e2;
   height: 100%;
   border-radius: 6px;
   transition: width 1.2s cubic-bezier(.4,1.4,.6,1);
 }
+
 body.dark .bar {
   background: #2c3440;
 }
+
 body.dark .bar .fill {
   background: #6cb6ff;
+}
+
+/* Soft Skills specific styles */
+.soft-skills-list .skill {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 1px 4px rgba(74,144,226,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.soft-skills-list .skill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74,144,226,0.08);
+}
+
+.soft-skills-list .skill span {
+  color: #4a90e2;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Dark mode styles for soft skills */
+body.dark .soft-skills-list .skill {
+  background: #23272b;
+  box-shadow: 0 1px 4px rgba(108,182,255,0.06);
+}
+
+body.dark .soft-skills-list .skill:hover {
+  box-shadow: 0 4px 12px rgba(108,182,255,0.08);
+}
+
+body.dark .soft-skills-list .skill span {
+  color: #6cb6ff;
+}
+
+body.dark .skill-description {
+  color: #eaf3fa;
+}
+
+/* Remove old soft skills styles */
+.soft-skills-grid,
+.soft-skill-item,
+.soft-skill-icon,
+.soft-skill-content {
+  display: none;
 }
 
 /* Experience Timeline & Cards */
@@ -1025,5 +1116,51 @@ body.dark .info-block li:hover {
   
   .info-block {
     transform: none !important;
+  }
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, #4a90e2 60%, #6cb6ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.10);
+}
+
+.download-btn:hover {
+  background: linear-gradient(90deg, #357ab8 60%, #4a90e2 100%);
+  transform: translateY(-1px);
+}
+
+.download-btn svg {
+  stroke: #fff;
+}
+
+body.dark .download-btn {
+  background: linear-gradient(90deg, #6cb6ff 60%, #4a90e2 100%);
+}
+
+body.dark .download-btn:hover {
+  background: linear-gradient(90deg, #4a90e2 60%, #6cb6ff 100%);
+}
+
+@media (max-width: 700px) {
+  .download-btn span {
+    display: none;
+  }
+  .download-btn {
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+  .download-btn svg {
+    margin: 0;
   }
 } 

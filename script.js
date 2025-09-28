@@ -85,15 +85,96 @@ function setupDownloadPDF() {
       alert('PDF generation library failed to load. Please check your internet connection and try again.');
       return;
     }
+
+    // Hide elements that shouldn't be in the PDF
+    const elementsToHide = document.querySelectorAll('.theme-toggle, .hamburger, #nav-list, .download-btn');
+    elementsToHide.forEach(el => el.style.display = 'none');
+
+    // Add print-specific styles
+    const style = document.createElement('style');
+    style.textContent = `
+      @media print {
+        .section { 
+          page-break-inside: avoid;
+          margin-bottom: 1.5rem;
+        }
+        .exp-card, .edu-card, .project-card {
+          page-break-inside: avoid;
+        }
+        .skills-container {
+          page-break-inside: avoid;
+        }
+        .info-flex {
+          page-break-inside: avoid;
+        }
+        .divider-3d {
+          display: none;
+        }
+        body {
+          background: none !important;
+        }
+        .section {
+          background: none !important;
+          box-shadow: none !important;
+          border-radius: 0 !important;
+          padding: 0.5rem 0 !important;
+        }
+        .skills-category, .info-block {
+          background: none !important;
+          box-shadow: none !important;
+          border: none !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
     const mainContent = document.querySelector('main');
     const opt = {
-      margin:       0.2,
-      filename:     'William_Kalogeropoulos_Resume.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true },
-      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+      margin: [0.4, 0.4, 0.4, 0.4], // Slightly reduced margins
+      filename: 'William_Kalogeropoulos_Resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { 
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        letterRendering: true,
+        windowWidth: 1200, // Fixed width for consistent rendering
+        scrollY: 0
+      },
+      jsPDF: { 
+        unit: 'in', 
+        format: 'a4', 
+        orientation: 'portrait',
+        compress: true,
+        hotfixes: ['px_scaling'] // Fix for better scaling
+      },
+      pagebreak: { 
+        mode: ['css', 'legacy'],
+        before: '.section',
+        avoid: [
+          '.exp-card', 
+          '.edu-card', 
+          '.project-card',
+          '.skills-category',
+          '.info-block',
+          '.skills-list',
+          '.info-flex'
+        ],
+        after: ['.section']
+      }
     };
-    html2pdf().set(opt).from(mainContent).save();
+
+    // Generate PDF
+    html2pdf().set(opt).from(mainContent).save().then(() => {
+      // Clean up
+      document.head.removeChild(style);
+      elementsToHide.forEach(el => el.style.display = '');
+    }).catch(err => {
+      console.error('PDF generation failed:', err);
+      alert('Failed to generate PDF. Please try again.');
+      document.head.removeChild(style);
+      elementsToHide.forEach(el => el.style.display = '');
+    });
   });
 }
 
